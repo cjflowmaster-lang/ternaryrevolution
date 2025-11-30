@@ -68,3 +68,9 @@ MIT License – use the code for anything, commercial or research.
 * GitHub Issues & Discussions (here)
 * X / Twitter: #TernaryRevolution
 * Owner: @cjflowmaster-lang
+---
+
+**TernaryRevolution**  
+Beyond binary. Beyond gravity. Beyond limits.
+
+Join us.
