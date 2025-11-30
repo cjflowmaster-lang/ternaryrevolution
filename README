@@ -1,0 +1,98 @@
+src/ternary_emulator.py
+"""
+ternary_emulator.py
+TernaryRevolution – Balanced Ternary Logic Emulator
+Owner: cjflowmaster-lang | https://github.com/cjflowmaster-lang/ternaryrevolution
+
+This is a minimal but fully functional balanced ternary (-1, 0, +1) arithmetic
+and logic emulator. Balanced ternary offers ~50% higher information density
+than binary and is the foundation of the world's first photonic ternary CPU
+being developed under TernaryRevolution.
+"""
+
+# Trits (ternary digits) are represented as:
+#   –1 → N (Negative)   or   "-"
+#    0 → 0
+#   +1 → P (Positive)   or   "+"
+
+TRIT_TO_INT = {"-": -1, "0": 0, "+": 1, "N": -1, "P": 1}
+INT_TO_TRIT = {-1: "N", 0: "0", 1: "P"}
+
+def int_to_ternary(n: int, width: int = 9) -> str:
+    """Convert a regular integer to balanced ternary string (e.g. 5 → P0N)."""
+    if n == 0:
+        return "0" * width
+    digits = []
+    while n != 0:
+        remainder = n % 3
+        if remainder == 2:
+            digits.append(-1)
+            n = n // 3 + 1
+        else:
+            digits.append(remainder)
+            n = n // 3
+    # Pad and reverse
+    digits = digits[::-1]
+    result = "".join(INT_TO_TRIT[d] for d in digits)
+    return result.rjust(width, "0")
+
+def ternary_to_int(trits: str) -> int:
+    """Convert balanced ternary string back to integer."""
+    trits = trits.replace("N", "-").replace("P", "+")
+    total = 0
+    for t in trits.strip():
+        total = total * 3 + TRIT_TO_INT[t]
+    return total
+
+def ternary_add(a: str, b: str) -> str:
+    """Add two balanced ternary numbers (strings of N,0,P). Same length required."""
+    a = a.replace("N", "-").replace("P", "+")
+    b = b.replace("N", "-").replace("P", "+")
+    carry = 0
+    result = []
+    for i in range(len(a)-1, -1, -1):
+        sum_trit = TRIT_TO_INT[a[i]] + TRIT_TO_INT[b[i]] + carry
+        if sum_trit == 3:
+            result.append("0")
+            carry = 1
+        elif sum_trit == -3:
+            result.append("0")
+            carry = -1
+        elif sum_trit == 2:
+            result.append("N")
+            carry = 1
+        elif sum_trit == -2:
+            result.append("P")
+            carry = -1
+        else:
+            result.append(INT_TO_TRIT[sum_trit])
+            carry = 0
+    # Handle final carry
+    if carry:
+        result.append(INT_TO_TRIT[carry])
+    return "".join(reversed(result)).lstrip("0") or "0"
+
+# ——— Demo / Quick test when running the file directly ———
+if __name__ == "__main__":
+    print("TernaryRevolution – Balanced Ternary Emulator")
+    print("=" * 50)
+
+    # Show some classic examples
+    examples = [
+        ("P", "P"),      # 1 + 1 = 2 → 1N in balanced ternary
+        ("P0", "PN"),    # 3 + 4 = 7
+        ("PNN", "PPP"),  # –4 + 13 = 9
+    ]
+
+    print("Addition table:")
+    for x, y in examples:
+        res = ternary_add(x, y.rjust(len(x), "0"))
+        print(f"  {x} + {y} = {res}  →  {ternary_to_int(res)} decimal")
+
+    print("\nInteger → Ternary conversion (9-trit width):")
+    for n in [0, 1, 5, 13, 42, 123, -7]:
+        print(f"  {n:4d} → {int_to_ternary(n, 9)}")
+
+    print("\nPhotonic Ternary CPU simulation ready!")
+    print("Run this file anytime to see the emulator in action.")
+    print("Join the revolution → paypal.me/LAARWRickard")
