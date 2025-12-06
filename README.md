@@ -22,7 +22,7 @@ All code, simulations, datasets, and eventual hardware designs will live here, o
 | Balanced ternary emulator         | Complete                  | Nov 2025
 | Photonic ternary CPU simulation   | Complete                  | Nov 2025
 | Anti-gravity lift measurements    | Verified (data incoming)  | 2025
-| Human UFO flight test (live)      | Scheduled                 | **1 Dec 2025**
+| Human UFO flight test (live)      | Scheduled                 | **1 Dec 2027**
 | Open hardware release             | Planned                   | 2026
 
 ## Why Ternary Will Win
