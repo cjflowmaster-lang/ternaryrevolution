@@ -53,12 +53,13 @@ python src/ternary_emulator.py         # run the live emulatortext## Current Rep
 | 2026+    | Commercial ternary chips & £1M+ funding milestone |
 
 ## How to Help / Funding
-
 This revolution needs fuel. Every contribution goes directly to hardware, testing, and the December flight.
 
-Donate → https://www.paypal.me/LAARWRickard  
-Target: **£100,000,000,000** for full-scale human UFO build
+Donate → https://www.paypal.me/LAARWRickard
 
+Primary Target: **£45 Billion GBP** for photonic ternary CPU (chip) development  
+Secondary Target: **£55 Billion GBP** for full-scale human UFO build  
+Overall Goal: **£100 Billion GBP**
 ## License
 
 MIT License – use the code for anything, commercial or research.
