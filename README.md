@@ -57,7 +57,7 @@ python src/ternary_emulator.py         # run the live emulatortext## Current Rep
 This revolution needs fuel. Every contribution goes directly to hardware, testing, and the December flight.
 
 Donate → https://www.paypal.me/LAARWRickard  
-Target: **£1,000,000** for full-scale human UFO build
+Target: **£100,000,000,000** for full-scale human UFO build
 
 ## License
 
