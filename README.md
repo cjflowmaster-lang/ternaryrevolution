@@ -62,8 +62,8 @@ This revolution needs fuel. Every contribution goes directly to hardware, testin
 
 Donate → https://www.paypal.me/LAARWRickard
 
-Primary Target: **£55 Billion GBP** for photonic ternary CPU (chip) development  
-Secondary Target: **£45 Billion GBP** for full-scale human UFO build  
+Primary Target: **£45 Billion GBP** for photonic ternary CPU (chip) development  
+Secondary Target: **£55 Billion GBP** for full-scale human UFO build  
 Overall Goal: **£100 Billion GBP**
 
 MIT License – use the code for anything, commercial or research.
